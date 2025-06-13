@@ -48,3 +48,20 @@ OpenCV + MediaPipe / YOLO
 LINE Messaging API / IFTTT / Twilio
 本体
 Raspberry Pi 4 / Jetson Nano（GPU必要なら）
+
+## Docker環境
+
+このリポジトリでは Python ベースの解析環境を Docker で提供しています。
+以下のコマンドでイメージをビルドできます。
+
+```bash
+docker build -t aisensor .
+```
+
+### 実行例
+
+```bash
+docker run --rm aisensor
+```
+
+カメラデバイスやシリアルポートを利用する場合は `--device` オプションを追加してください。
