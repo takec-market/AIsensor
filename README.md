@@ -65,3 +65,41 @@ docker run --rm aisensor
 ```
 
 カメラデバイスやシリアルポートを利用する場合は `--device` オプションを追加してください。
+
+## 導入方法
+
+### Python 環境での実行
+
+Python 3.9 以上がインストールされた環境で以下の手順を実行します。
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python main.py
+```
+
+### Docker を用いた実行
+
+前述の通り、Docker イメージをビルドして起動することもできます。
+
+```bash
+docker build -t aisensor .
+docker run --rm aisensor
+```
+
+必要に応じて `--device` オプションでカメラやシリアルポートをマウントしてください。
+
+## テスト
+
+テストには `pytest` を使用します。未インストールの場合は以下で追加してください。
+
+```bash
+pip install pytest
+```
+
+テストは `tests/` ディレクトリにあります。次のコマンドで実行できます。
+
+```bash
+pytest
+```
