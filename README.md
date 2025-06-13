@@ -48,3 +48,30 @@ OpenCV + MediaPipe / YOLO
 LINE Messaging API / IFTTT / Twilio
 本体
 Raspberry Pi 4 / Jetson Nano（GPU必要なら）
+
+## Docker環境
+
+このリポジトリでは Python ベースの解析環境を Docker で提供しています。
+以下のコマンドでイメージをビルドできます。
+
+```bash
+docker build -t aisensor .
+```
+
+### 実行例
+
+```bash
+docker run --rm aisensor
+```
+
+カメラデバイスやシリアルポートを利用する場合は `--device` オプションを追加してください。
+
+## 転倒検知デモ
+
+`main.py` では CSV ファイルに記録された加速度データを読み込み、簡易的な閾値ベースの転倒検知を行います。
+
+```bash
+python main.py sample_data.csv
+```
+
+`sample_data.csv` はサンプルデータであり、実機のセンサーから取得した値に置き換えて利用してください。
